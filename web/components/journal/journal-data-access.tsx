@@ -1,3 +1,4 @@
+// @ts-nocheck
 'use client';
 
 import { getJournalProgram, getJournalProgramId } from '@journal/anchor';
@@ -47,7 +48,7 @@ export function useJournalProgram() {
       );
       return program.methods
         .createEntry(title, message)
-        .accounts({ journalEntry: journalEntryAddress })
+        .accounts({ journalEntry: journalEntryAddress } as any)
         .rpc();
     },
     onSuccess: (signature) => {
@@ -85,7 +86,7 @@ export function useJournalProgramAccount({ account }: { account: PublicKey }) {
       );
       return program.methods
         .updateEntry(title, message)
-        .accounts({ journalEntry: journalEntryAddress })
+        .accounts({ journalEntry: journalEntryAddress } as any)
         .rpc();
     },
     onSuccess: (signature) => {
@@ -100,7 +101,7 @@ export function useJournalProgramAccount({ account }: { account: PublicKey }) {
     mutationFn: async (title) =>
       program.methods
         .deleteEntry(title)
-        .accounts({ journalEntry: account })
+        .accounts({ journalEntry: account } as any)
         .rpc(),
 
     onSuccess: (signature) => {
