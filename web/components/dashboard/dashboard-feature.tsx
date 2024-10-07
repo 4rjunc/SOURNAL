@@ -17,23 +17,8 @@ export default function DashboardFeature() {
   return (
     <div>
 
-      <div className="max-w-xl mx-auto py-6 sm:px-6 lg:px-8 text-center">
-      <AppHero title="SOURNAL" subtitle="solana way to save your memory" />
-        <div className="space-y-2">
-          <p>Here are some helpful links to get you started.</p>
-          {links.map((link, index) => (
-            <div key={index}>
-              <a
-                href={link.href}
-                className="link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {link.label}
-              </a>
-            </div>
-          ))}
-        </div>
+      <div className="py-6 sm:px-6 text-center">
+          <AppHero title="SOURNAL" subtitle="solana way to save your notes" />
       </div>
     </div>
   );

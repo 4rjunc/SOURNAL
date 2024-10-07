@@ -12,7 +12,7 @@ export const metadata = {
 const links: { label: string; path: string }[] = [
   // { label: 'Account', path: '/account' },
   // { label: 'Clusters', path: '/clusters' },
-   { label: 'Create Journal', path: '/journal' },
+   { label: 'Create Journal ✍🏼', path: '/journal' },
 ];
 
 export default function RootLayout({
