@@ -1,6 +1,7 @@
 # Sournal
 
 This is simple project to save note in a journal. This dApp performs CRUD operation in Solana.
+
 Program is deployed in devnet : [HERE]("https://explorer.solana.com/address/8Px6wxLmE9rjLAP3wbueCaocfRf2CrsdCmNmGJthdZ1p?cluster=devnet")
 
 > [!NOTE]
