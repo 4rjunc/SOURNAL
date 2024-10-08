@@ -12,22 +12,14 @@ export default function JournalFeature() {
   const { programId } = useJournalProgram();
 
   return publicKey ? (
-    <div>
-      <AppHero
-        title="Journal"
-        subtitle={
-          'Create a new account by clicking the "Create" button. The state of a account is stored on-chain and can be manipulated by calling the program\'s methods (increment, decrement, set, and close).'
-        }
-      >
-        <p className="mb-6">
-          <ExplorerLink
-            path={`account/${programId}`}
-            label={ellipsify(programId.toString())}
-          />
-        </p>
+    <div className="flex-col text-center mx-auto px-4">
+      <h2 className='text-center text-2xl font-semibold py-5'>Your Journals</h2>
+      <div className="mt-6">
         <JournalCreate />
-      </AppHero>
-      <JournalList />
+      </div>
+      <div className="mt-6">
+        <JournalList />
+      </div>
     </div>
   ) : (
     <div className="max-w-4xl mx-auto">

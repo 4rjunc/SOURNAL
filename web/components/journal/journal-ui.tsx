@@ -33,27 +33,41 @@ export function JournalCreate() {
 
   return (
     <div>
-      <input
-        type="text"
-        placeholder="Title"
-        onChange={(e) => setTitle(e.target.value)}
-        className="input rounded-lg input-bordered w-full max-x-xs"
-      />
-      <textarea
-        placeholder="Message"
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-        className="textarea rounded-lg textarea-bordered w-full max-x-xs"
-      />
+      {/* The button to open modal */}
+      <label htmlFor="my_modal_6" className="btn">Create A Note</label>
 
-      <button
-        className="btn btn-xs lg:btn-md btn-primary"
-        onClick={handleSubmit}
-        disabled={createEntry.isPending || !isFormValid}
-      >
-        Create {createEntry.isPending && '...'}
-      </button>
+      {/* Put this part before </body> tag */}
+      <input type="checkbox" id="my_modal_6" className="modal-toggle" />
+      <div className="modal" role="dialog">
+        <div className="modal-box">
+          <p className="py-4">Create a note and add it to your journal</p>
+            <input
+            type="text"
+            placeholder="Title"
+            onChange={(e) => setTitle(e.target.value)}
+            className="input rounded-lg mt-2 input-bordered w-full max-x-xs"
+          />
+          <textarea
+            placeholder="Message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            className="textarea rounded-lg mt-2  textarea-bordered w-full max-x-xs"
+          />
+
+          <button
+            className="btn btn-xs lg:btn-md btn-primary"
+            onClick={handleSubmit}
+            disabled={createEntry.isPending || !isFormValid}
+          >
+            Create {createEntry.isPending && '...'}
+          </button>
+
+        <div className="modal-action">
+          <label htmlFor="my_modal_6" className="btn">Close!</label>
+        </div>
+      </div>
     </div>
+  </div>
   );
 }
 
@@ -88,8 +102,8 @@ export function JournalList() {
         </div>
       ) : (
         <div className="text-center">
-          <h2 className={'text-2xl'}>No accounts</h2>
-          No accounts found. Create one above to get started.
+          <h2 className={'text-2xl'}>No Journals</h2>
+          No notes found. Create one using `Create A Note` to get started.
         </div>
       )}
     </div>
@@ -130,7 +144,7 @@ function JournalCard({ account }: { account: PublicKey }) {
             {accountQuery.data?.title}
           </h2>
           <p>{accountQuery.data?.message}</p>
-          <div className="card-actions justify-around">
+          <div className="mt-5 card-actions justify-around">
             <textarea
               placeholder="New Message"
               value={message}
@@ -147,18 +161,18 @@ function JournalCard({ account }: { account: PublicKey }) {
             </button>
           </div>
           <div className="text-center space-y-4">
-            <p>
+            {/*<p>
               <ExplorerLink
                 path={`account/${account}`}
                 label={ellipsify(account.toString())}
               />
-            </p>
+            </p>*/}
             <button
-              className="btn btn-xs btn-secondary btn-outline"
+              className="btn btn-md text-xl btn-secondary btn-outline"
               onClick={() => {
                 if (
                   !window.confirm(
-                    'Are you sure you want to close this account?'
+                    'Are you sure you want to delete this note?'
                   )
                 ) {
                   return;
@@ -170,7 +184,7 @@ function JournalCard({ account }: { account: PublicKey }) {
               }}
               disabled={deleteEntry.isPending}
             >
-              Delete
+              Delete 🚮
             </button>
           </div>
         </div>
