@@ -3,8 +3,8 @@
 This is simple project to save note in a journal. This dApp performs CRUD operation in Solana.
 Program is deployed in devnet : [HERE]("https://explorer.solana.com/address/8Px6wxLmE9rjLAP3wbueCaocfRf2CrsdCmNmGJthdZ1p?cluster=devnet")
 
->[INFO]
-> Project is deployed is devnet.
+> [!NOTE]
+> Program is deployed in devnet. Fill you wallet with some sol to interact with the dApp
 
 ## Screenshots
 ![ss1](/assets/s1.png)
