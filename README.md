@@ -1,6 +1,15 @@
-# journal
+# Sournal
 
-This project is generated with the [create-solana-dapp](https://github.com/solana-developers/create-solana-dapp) generator.
+This is simple project to save note in a journal. This dApp performs CRUD operation in Solana.
+Program is deployed in devnet : [HERE]("https://explorer.solana.com/address/8Px6wxLmE9rjLAP3wbueCaocfRf2CrsdCmNmGJthdZ1p?cluster=devnet")
+
+>[INFO]
+> Project is deployed is devnet.
+
+## Screenshots
+![ss1](/assets/s1.png)
+![ss2](/assets/s2.png)
+![ss3](/assets/s3.png)
 
 ## Getting Started
 
@@ -17,20 +26,20 @@ This project is generated with the [create-solana-dapp](https://github.com/solan
 #### Clone the repo
 
 ```shell
-git clone <repo-url>
-cd <repo-name>
+git clone https://github.com/4rjunc/SOURNAL.git
+cd SOURNAL
 ```
 
 #### Install Dependencies
 
 ```shell
-npm install
+yarn install
 ```
 
 #### Start the web app
 
 ```
-npm run dev
+yarn run dev
 ```
 
 ## Apps
@@ -41,7 +50,7 @@ This is a Solana program written in Rust using the Anchor framework.
 
 #### Commands
 
-You can use any normal anchor commands. Either move to the `anchor` directory and run the `anchor` command or prefix the command with `npm run`, eg: `npm run anchor`.
+You can use any normal anchor commands. Either move to the `anchor` directory and run the `anchor` command or prefix the command with `yarn run`, eg: `yarn run anchor`.
 
 #### Sync the program id:
 
@@ -50,31 +59,31 @@ Running this command will create a new keypair in the `anchor/target/deploy` dir
 You will manually need to update the constant in `anchor/lib/counter-exports.ts` to match the new program id.
 
 ```shell
-npm run anchor keys sync
+yarn run anchor keys sync
 ```
 
 #### Build the program:
 
 ```shell
-npm run anchor-build
+yarn run anchor-build
 ```
 
 #### Start the test validator with the program deployed:
 
 ```shell
-npm run anchor-localnet
+yarn run anchor-localnet
 ```
 
 #### Run the tests
 
 ```shell
-npm run anchor-test
+yarn run anchor-test
 ```
 
 #### Deploy to Devnet
 
 ```shell
-npm run anchor deploy --provider.cluster devnet
+yarn run anchor deploy --provider.cluster devnet
 ```
 
 ### web
@@ -86,11 +95,11 @@ This is a React app that uses the Anchor generated client to interact with the S
 Start the web app
 
 ```shell
-npm run dev
+yarn run dev
 ```
 
 Build the web app
 
 ```shell
-npm run build
+yarn run build
 ```
